@@ -12,6 +12,7 @@ namespace botapp.Interfaces.Primarias
 {
     public partial class ModulesInterface : UserControl
     {
+        public event EventHandler CerrarSesion;
         public ModulesInterface()
         {
             InitializeComponent();
@@ -19,7 +20,7 @@ namespace botapp.Interfaces.Primarias
 
         private void btncerrarsesion_Click(object sender, EventArgs e)
         {
-
+            CerrarSesion?.Invoke(this, EventArgs.Empty);
         }
     }
 }

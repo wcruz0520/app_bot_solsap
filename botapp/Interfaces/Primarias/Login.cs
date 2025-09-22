@@ -109,5 +109,12 @@ namespace botapp.Interfaces.Primarias
                 LoginExitoso?.Invoke(this, EventArgs.Empty);
             }
         }
+
+        public void LimpiarCampos()
+        {
+            txtusuario.Text = "";
+            txtclave.Text = "";
+            chkgurdcontr.Checked = false;
+        }
     }
 }
