@@ -1,0 +1,12 @@
+C:\Users\William\source\repos\botapp\botapp\bin\x64\Debug\botapp.exe.config
+C:\Users\William\source\repos\botapp\botapp\bin\x64\Debug\botapp.exe
+C:\Users\William\source\repos\botapp\botapp\bin\x64\Debug\botapp.pdb
+C:\Users\William\source\repos\botapp\botapp\obj\x64\Debug\botapp.Interfaces.Primarias.Login.resources
+C:\Users\William\source\repos\botapp\botapp\obj\x64\Debug\botapp.PrincipalForm.resources
+C:\Users\William\source\repos\botapp\botapp\obj\x64\Debug\botapp.Properties.Resources.resources
+C:\Users\William\source\repos\botapp\botapp\obj\x64\Debug\botapp.csproj.GenerateResource.cache
+C:\Users\William\source\repos\botapp\botapp\obj\x64\Debug\botapp.csproj.CoreCompileInputs.cache
+C:\Users\William\source\repos\botapp\botapp\obj\x64\Debug\botapp.exe
+C:\Users\William\source\repos\botapp\botapp\obj\x64\Debug\botapp.pdb
+C:\Users\William\source\repos\botapp\botapp\obj\x64\Debug\botapp.csproj.AssemblyReference.cache
+C:\Users\William\source\repos\botapp\botapp\obj\x64\Debug\botapp.Interfaces.Primarias.ModulesInterface.resources
