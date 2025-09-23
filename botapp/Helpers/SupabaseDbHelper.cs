@@ -83,5 +83,44 @@ namespace botapp.Helpers
                 return false;
             }
         }
+
+        public async Task<(string UserCode, string ProfileImageUrl)> GetUserDataAsync(string userCode)
+        {
+            try
+            {
+                string url = string.Format(
+                    "{0}/rest/v1/user_bot?user_code=eq.{1}&select=user_code,profile_image_url",
+                    _supabaseUrl,
+                    Uri.EscapeDataString(userCode)
+                );
+
+                var response = await _httpClient.GetAsync(url);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    return (null, null);
+                }
+
+                string json = await response.Content.ReadAsStringAsync();
+
+                // Ejemplo de respuesta: [{"user_code":"william","profile_image_url":"https://..."}]
+                var data = Newtonsoft.Json.Linq.JArray.Parse(json);
+
+                if (data.Count > 0)
+                {
+                    string userCodeResp = data[0]["user_code"]?.ToString();
+                    string profileImageUrl = data[0]["profile_image_url"]?.ToString();
+                    return (userCodeResp, profileImageUrl);
+                }
+
+                return (null, null);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en GetUserDataAsync: " + ex.Message);
+                return (null, null);
+            }
+        }
+
     }
 }

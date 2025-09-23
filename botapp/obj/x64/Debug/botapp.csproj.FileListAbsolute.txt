@@ -10,3 +10,7 @@ C:\Users\William\source\repos\botapp\botapp\obj\x64\Debug\botapp.exe
 C:\Users\William\source\repos\botapp\botapp\obj\x64\Debug\botapp.pdb
 C:\Users\William\source\repos\botapp\botapp\obj\x64\Debug\botapp.csproj.AssemblyReference.cache
 C:\Users\William\source\repos\botapp\botapp\obj\x64\Debug\botapp.Interfaces.Primarias.ModulesInterface.resources
+C:\Users\William\source\repos\botapp\botapp\bin\x64\Debug\Newtonsoft.Json.dll
+C:\Users\William\source\repos\botapp\botapp\bin\x64\Debug\Newtonsoft.Json.xml
+C:\Users\William\source\repos\botapp\botapp\obj\x64\Debug\botapp.csproj.CopyComplete
+C:\Users\William\source\repos\botapp\botapp\obj\x64\Debug\botapp.Interfaces.Secundarias.ConfigBotInterface.resources

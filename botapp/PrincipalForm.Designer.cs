@@ -37,17 +37,18 @@ namespace botapp
             this.pnlprincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlprincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlprincipal.Name = "pnlprincipal";
-            this.pnlprincipal.Size = new System.Drawing.Size(800, 450);
+            this.pnlprincipal.Size = new System.Drawing.Size(1900, 981);
             this.pnlprincipal.TabIndex = 0;
             // 
             // PrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1900, 981);
             this.Controls.Add(this.pnlprincipal);
             this.Name = "PrincipalForm";
             this.Text = "Automatización de descarga de docs. electrónicos";
+            this.Load += new System.EventHandler(this.PrincipalForm_Load);
             this.ResumeLayout(false);
 
         }

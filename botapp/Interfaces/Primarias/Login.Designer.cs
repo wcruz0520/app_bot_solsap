@@ -204,6 +204,7 @@ namespace botapp.Interfaces.Primarias
             // 
             this.lblmsg.AutoSize = true;
             this.lblmsg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblmsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblmsg.Location = new System.Drawing.Point(3, 0);
             this.lblmsg.Name = "lblmsg";
             this.lblmsg.Size = new System.Drawing.Size(340, 26);

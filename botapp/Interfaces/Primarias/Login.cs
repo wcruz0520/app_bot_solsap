@@ -14,7 +14,7 @@ namespace botapp.Interfaces.Primarias
 {
     public partial class Login : UserControl
     {
-        public event EventHandler LoginExitoso;
+        public event EventHandler<string> LoginExitoso;
         public string supabaseUrl = "https://hgwbwaisngbyzaatwndb.supabase.co";
         public string apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhnd2J3YWlzbmdieXphYXR3bmRiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcwNDIwMDYsImV4cCI6MjA3MjYxODAwNn0.WgHmnqOwKCvzezBM1n82oSpAMYCT5kNCb8cLGRMIsbk";
         public Login()
@@ -34,6 +34,13 @@ namespace botapp.Interfaces.Primarias
                 chkgurdcontr.Checked = true;
                 AutoLogin();
             }
+
+            txtusuario.TabIndex = 0;
+            txtclave.TabIndex = 1;
+            btnVerClave.TabIndex = 2;
+            chkgurdcontr.TabIndex = 3;
+            btningresar.TabIndex = 4;
+            btncerrar.TabIndex = 5;
         }
 
         private async void btningresar_Click(object sender, EventArgs e)
@@ -44,7 +51,10 @@ namespace botapp.Interfaces.Primarias
 
             if (!validaconnsupa)
             {
-                MessageBox.Show("Sin conexión Supabase");
+                //MessageBox.Show("Sin conexión Supabase");
+                lblmsg.Text = "Sin conexión Supabase";
+                lblmsg.ForeColor = Color.White;
+                lblmsg.BackColor = Color.Red;
             }
             else
             {
@@ -70,11 +80,14 @@ namespace botapp.Interfaces.Primarias
                     config.Save(ConfigurationSaveMode.Modified);
                     ConfigurationManager.RefreshSection("appSettings");
 
-                    LoginExitoso?.Invoke(this, EventArgs.Empty);
+                    LoginExitoso?.Invoke(this, txtusuario.Text);
                 }
                 else
                 {
-                    MessageBox.Show("❌ Usuario o contraseña incorrectos");
+                    //MessageBox.Show("❌ Usuario o contraseña incorrectos");
+                    lblmsg.Text = "❌ Usuario o contraseña incorrectos";
+                    lblmsg.ForeColor = Color.White;
+                    lblmsg.BackColor = Color.Red;
                 }
             }
         }
@@ -99,14 +112,17 @@ namespace botapp.Interfaces.Primarias
             bool validaconnsupa = await helper.TestConnectionAsync();
             if (!validaconnsupa)
             {
-                MessageBox.Show("Sin conexión Supabase");
+                //MessageBox.Show("Sin conexión Supabase");
+                lblmsg.Text = "Sin conexión Supabase";
+                lblmsg.ForeColor = Color.White;
+                lblmsg.BackColor = Color.Red;
                 return;
             }
 
             bool autenticado = await helper.AuthenticateAsync(txtusuario.Text, txtclave.Text);
             if (autenticado)
             {
-                LoginExitoso?.Invoke(this, EventArgs.Empty);
+                LoginExitoso?.Invoke(this, txtusuario.Text);
             }
         }
 
